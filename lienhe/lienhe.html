@@ -47,12 +47,23 @@
                     <div id="zzz3" style="text-indent: 1em;">
                         Gửi tin nhắn cho chúng tôi 
                     </div>
-                    <input type="text" placeholder="Họ tên">  
+                    <form>
+                    <input type="text" placeholder="Họ tên" required>  
                     <label></label>  
-                    <input type="text" placeholder="Email">    
-                    <input type="text" placeholder="Số điện thoại">        
+                    <input type="text" placeholder="Email" required>    
+                    <input type="text" placeholder="Số điện thoại" required>        
                     <textarea id="loinhan" name="message" rows="4" required placeholder="Để lại lời nhắn"></textarea>
-                    <button id="but">Gửi liên hệ</button>
+                    <input type="submit" id="but" value="Gửi liên hệ">
+                </form>
+                    <div id="success_notification" style="display: none; color: green;">
+                        Tin nhắn của bạn đã được gửi thành công! Chúng tôi sẽ liên hệ lại sớm nhất.
+                    </div>
+                    <script>
+                        document.querySelector("form").addEventListener("submit", function(event) {
+                            event.preventDefault();
+                            document.getElementById("success_notification").style.display = "block";
+                        });
+                    </script>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.1206073966155!2d105.75521357502909!3d20.947671180681517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313452eaa9c461c3%3A0x2a3e1c421f299adc!2zVHLGsOG7nW5nIMSQ4bqhaSBI4buNYyDEkOG6oWkgTmFt!5e0!3m2!1svi!2s!4v1710923227698!5m2!1svi!2s" width="1350" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="map"></iframe>
                     <div id="ttlh">
                         <i class="fa-solid fa-square-phone">Số điện thoại</i>
@@ -64,8 +75,7 @@
                         <p id="email">Email@gmail.com</p>
                         </div>
                     </div>
-                </div>
-                
+                </div>             
     </body>
 </html>
                 
